@@ -2,36 +2,57 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizzatore PDF</title>
+    <title>Caricamento PDF...</title>
     <style>
-        html, body {
+        body {
             margin: 0;
-            height: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #FFD700; /* Oro */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.7s linear infinite;
+            margin-bottom: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1 {
+            font-size: 18px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <iframe id="pdfFrame"></iframe>
+    <div class="loader"></div>
+    <h1>Apertura PDF...</h1>
 
     <script>
-        // Legge i parametri dell'URL
         const urlParams = new URLSearchParams(window.location.search);
-        const pdfUrl = urlParams.get('pdf');
+        const file = urlParams.get('file');
 
-        if (pdfUrl) {
-            const timestamp = new Date().getTime(); // aggiunge timestamp per forzare il caricamento
-            document.getElementById('pdfFrame').src = pdfUrl + '?t=' + timestamp;
+        if (file) {
+            setTimeout(() => {
+                window.location.href = `./pdfjs/web/viewer.html?file=../${file}`;
+            }, 300); // 300 millisecondi
         } else {
-            document.body.innerHTML = "<h1>PDF non trovato.</h1>";
+            document.body.innerHTML = '<h1>PDF non trovato</h1>';
         }
     </script>
 </body>
 </html>
+
 
         }
     </script>
