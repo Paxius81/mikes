@@ -4,59 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ristorante</title>
+    
     <style>
-        body {
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-image: url('images/sfondo.jpg'); /* Percorso sfondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header img {
+            width: 50%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-button {
+            width: 80%;
+            max-width: 400px;
+            background: transparent;
+            border: none;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-image: url('images/sfondo.jpg'); /* Aggiungi il tuo sfondo */
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
         }
-        .container {
-            text-align: center;
-            color: #fff;
-        }
-        img {
-            width: 150px; /* Regola la dimensione del logo */
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: block;
-            width: 90%;
-            padding: 20px;
-            margin: 10px auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        .btn img {
-            width: 150px; /* Regola la dimensione dei pulsanti */
-            vertical-align: middle;
-            margin-right: 10px;
+
+        .menu-button img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
+
+    <!-- LOGO -->
+    <header>
         <img src="images/logo.png" alt="Logo Ristorante">
-        <a href="menu-lunch.html" class="btn">
-            <img src="images/lunch-button.png" alt="Lunch Button">
-        
+    </header>
+
+    <!-- PULSANTI -->
+    <main>
+        <a href="lunchmenu.pdf" class="menu-button">
+            <img src="images/lunch.png" alt="Lunch Menu">
         </a>
-        <a href="menu-dinner.html" class="btn">
-            <img src="images/dinner-button.png" alt="Dinner Button">
         
+        <a href="dinnermenu.pdf" class="menu-button">
+            <img src="images/dinner.png" alt="Dinner Menu">
+        </a>
+    </main>
+
+</body>
+</html>
+
         </a>
     </div>
 </body>
