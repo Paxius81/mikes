@@ -50,15 +50,28 @@
 <body>
     <div class="container">
         <img src="images/logo.png" alt="Logo Ristorante">
-        <a href="pdf-viewer.html?pdf=pdfs/lunch-menu.pdf" target="_blank" class="btn">
+        <a href="#" id="lunchBtn" class="btn">
             <img src="images/lunch-button.png" alt="Lunch Button">
         </a>
-        <a href="pdf-viewer.html?pdf=pdfs/dinner-menu.pdf" target="_blank" class="btn">
+        <a href="#" id="dinnerBtn" class="btn">
             <img src="images/dinner-button.png" alt="Dinner Button">
         </a>
     </div>
+
+    <script>
+        // Funzione per aggiungere un parametro di cache-busting (timestamp)
+        function addTimestampToURL(url) {
+            const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+            return url + "?nocache=" + timestamp; // Aggiungi il timestamp all'URL
+        }
+
+        // Impostazione dei link per il menu Lunch e Dinner
+        document.getElementById('lunchBtn').href = addTimestampToURL('pdf-viewer.html?pdf=pdfs/lunch-menu.pdf');
+        document.getElementById('dinnerBtn').href = addTimestampToURL('pdf-viewer.html?pdf=pdfs/dinner-menu.pdf');
+    </script>
 </body>
 </html>
+
 
 
 
