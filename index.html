@@ -45,51 +45,21 @@
             vertical-align: middle;
             margin-right: 10px;
         }
-        iframe {
-            width: 100%;
-            height: 80vh; /* Imposta l'altezza dell'iframe */
-            border: none;
-            display: none; /* Nascondiamo gli iframe all'inizio */
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="images/logo.png" alt="Logo Ristorante">
-        
-        <!-- Pulsante Lunch -->
-        <a href="javascript:void(0);" class="btn" onclick="showMenu('lunch')">
+        <a href="pdf-viewer.html?pdf=pdfs/lunch-menu.pdf" target="_blank" class="btn">
             <img src="images/lunch-button.png" alt="Lunch Button">
         </a>
-        
-        <!-- Pulsante Dinner -->
-        <a href="javascript:void(0);" class="btn" onclick="showMenu('dinner')">
+        <a href="pdf-viewer.html?pdf=pdfs/dinner-menu.pdf" target="_blank" class="btn">
             <img src="images/dinner-button.png" alt="Dinner Button">
         </a>
-        
-        <!-- PDF.js integrato per Lunch -->
-        <iframe id="lunchMenu" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://paxius81.github.io/mikes/pdfs/lunch-menu.pdf"></iframe>
-        
-        <!-- PDF.js integrato per Dinner -->
-        <iframe id="dinnerMenu" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://paxius81.github.io/mikes/pdfs/dinner-menu.pdf"></iframe>
     </div>
-
-    <script>
-        function showMenu(menuType) {
-            // Nascondi entrambi i PDF
-            document.getElementById('lunchMenu').style.display = 'none';
-            document.getElementById('dinnerMenu').style.display = 'none';
-            
-            // Mostra il PDF selezionato
-            if (menuType === 'lunch') {
-                document.getElementById('lunchMenu').style.display = 'block';
-            } else if (menuType === 'dinner') {
-                document.getElementById('dinnerMenu').style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
+
 
 
 
