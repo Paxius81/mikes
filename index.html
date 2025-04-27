@@ -36,9 +36,6 @@
             text-decoration: none;
             border-radius: 10px;
             transition: background-color 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .btn:hover {
             background-color: rgba(0, 0, 0, 0.8);
@@ -46,21 +43,54 @@
         .btn img {
             width: 150px; /* Regola la dimensione dei pulsanti */
             vertical-align: middle;
+            margin-right: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh; /* Imposta l'altezza dell'iframe */
+            border: none;
+            display: none; /* Nascondiamo gli iframe all'inizio */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="images/logo.png" alt="Logo Ristorante">
-        <a href="pdfs/lunch-menu.pdf" class="btn" target="_blank">
+        
+        <!-- Pulsante Lunch -->
+        <a href="javascript:void(0);" class="btn" onclick="showMenu('lunch')">
             <img src="images/lunch-button.png" alt="Lunch Button">
         </a>
-        <a href="pdfs/dinner-menu.pdf" class="btn" target="_blank">
+        
+        <!-- Pulsante Dinner -->
+        <a href="javascript:void(0);" class="btn" onclick="showMenu('dinner')">
             <img src="images/dinner-button.png" alt="Dinner Button">
         </a>
+        
+        <!-- PDF.js integrato per Lunch -->
+        <iframe id="lunchMenu" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://paxius81.github.io/mikes/pdfs/lunch-menu.pdf"></iframe>
+        
+        <!-- PDF.js integrato per Dinner -->
+        <iframe id="dinnerMenu" src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://paxius81.github.io/mikes/pdfs/dinner-menu.pdf"></iframe>
     </div>
+
+    <script>
+        function showMenu(menuType) {
+            // Nascondi entrambi i PDF
+            document.getElementById('lunchMenu').style.display = 'none';
+            document.getElementById('dinnerMenu').style.display = 'none';
+            
+            // Mostra il PDF selezionato
+            if (menuType === 'lunch') {
+                document.getElementById('lunchMenu').style.display = 'block';
+            } else if (menuType === 'dinner') {
+                document.getElementById('dinnerMenu').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
+
 
 
 
