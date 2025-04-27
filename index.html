@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ristorante</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('images/sfondo.jpg'); /* Aggiungi il tuo sfondo */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            color: #fff;
+        }
+        img {
+            width: 150px; /* Regola la dimensione del logo */
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: block;
+            width: 90%;
+            padding: 20px;
+            margin: 10px auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .btn img {
+            width: 50px; /* Regola la dimensione dei pulsanti */
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="Logo Ristorante">
+        <a href="menu-lunch.html" class="btn">
+            <img src="images/lunch-button.png" alt="Lunch Button">
+            LUNCH
+        </a>
+        <a href="menu-dinner.html" class="btn">
+            <img src="images/dinner-button.png" alt="Dinner Button">
+            DINNER
+        </a>
+    </div>
+</body>
+</html>
