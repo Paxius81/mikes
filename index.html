@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('images/sfondo.jpg'); 
+            background-image: url('images/sfondo.jpg'); /* Aggiungi il tuo sfondo */
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
@@ -22,53 +22,39 @@
             color: #fff;
         }
         img {
-            width: 150px;
+            width: 150px; /* Regola la dimensione del logo */
             margin-bottom: 30px;
         }
         .btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: block;
             width: 90%;
             padding: 20px;
             margin: 10px auto;
             background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
             border-radius: 10px;
             transition: background-color 0.3s;
-            text-decoration: none;
         }
         .btn:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
         .btn img {
-            width: 150px;
-            height: auto;
+            width: 150px; /* Regola la dimensione dei pulsanti */
+            vertical-align: middle;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="images/logo.png" alt="Logo Ristorante">
-        
-        <a href="pdf-viewer.html?file=pdfs/lunch-menu.pdf&nocache=<?=Date.now()?>" class="btn" target="_blank">
+        <a href="https://drive.google.com/file/d/16udLzTI4dfLVfZDHLW33s209W1r5eq5t/preview" target="_blank" class="btn">
             <img src="images/lunch-button.png" alt="Lunch Button">
         </a>
-
-        <a href="pdf-viewer.html?file=pdfs/dinner-menu.pdf&nocache=<?=Date.now()?>" class="btn" target="_blank">
+        <a href="https://drive.google.com/file/d/16vOD3YaMWk_HmGHy8jowAkTjMi1aY5Wb/preview" target="_blank" class="btn">
             <img src="images/dinner-button.png" alt="Dinner Button">
-        </a>
-
-    </div>
-</body>
-</html>
-
-
-
-
-
-
-
-
         </a>
     </div>
 </body>
