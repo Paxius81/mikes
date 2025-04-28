@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('images/sfondo.jpg'); /* Aggiungi il tuo sfondo */
+            background-image: url('images/sfondo.jpg'); 
             background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
@@ -22,55 +22,46 @@
             color: #fff;
         }
         img {
-            width: 150px; /* Regola la dimensione del logo */
+            width: 150px;
             margin-bottom: 30px;
         }
         .btn {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 90%;
             padding: 20px;
             margin: 10px auto;
             background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
             border-radius: 10px;
             transition: background-color 0.3s;
+            text-decoration: none;
         }
         .btn:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
         .btn img {
-            width: 150px; /* Regola la dimensione dei pulsanti */
-            vertical-align: middle;
-            margin-right: 10px;
+            width: 150px;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="images/logo.png" alt="Logo Ristorante">
-        <a href="#" id="lunchBtn" class="btn">
+        
+        <a href="pdf-viewer.html?file=pdfs/lunch-menu.pdf&nocache=<?=Date.now()?>" class="btn" target="_blank">
             <img src="images/lunch-button.png" alt="Lunch Button">
         </a>
-        <a href="#" id="dinnerBtn" class="btn">
+
+        <a href="pdf-viewer.html?file=pdfs/dinner-menu.pdf&nocache=<?=Date.now()?>" class="btn" target="_blank">
             <img src="images/dinner-button.png" alt="Dinner Button">
         </a>
+
     </div>
-
-    <script>
-        // Funzione per aggiungere un parametro di cache-busting (timestamp)
-        function addTimestampToURL(url) {
-            const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
-            return url + "?nocache=" + timestamp; // Aggiungi il timestamp all'URL
-        }
-
-        // Impostazione dei link per il menu Lunch e Dinner
-        document.getElementById('lunchBtn').href = addTimestampToURL('pdf-viewer.html?pdf=pdfs/lunch-menu.pdf');
-        document.getElementById('dinnerBtn').href = addTimestampToURL('pdf-viewer.html?pdf=pdfs/dinner-menu.pdf');
-    </script>
 </body>
 </html>
+
 
 
 
