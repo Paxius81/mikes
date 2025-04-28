@@ -17,7 +17,7 @@
         }
         .loader {
             border: 8px solid #f3f3f3;
-            border-top: 8px solid #FFD700; /* Oro */
+            border-top: 8px solid #FFD700;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -44,14 +44,15 @@
 
         if (file) {
             setTimeout(() => {
-                window.location.href = `./pdfjs/web/viewer.html?file=../${file}`;
-            }, 300); // 300 millisecondi
+                window.location.href = `./pdfjs/web/viewer.html?file=${encodeURIComponent('../' + file)}`;
+            }, 300);
         } else {
             document.body.innerHTML = '<h1>PDF non trovato</h1>';
         }
     </script>
 </body>
 </html>
+
 
 
         }
